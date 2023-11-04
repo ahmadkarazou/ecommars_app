@@ -20,6 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
               padding: EdgeInsets.all(8.0),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                   SizedBox(height: 20),
               Text(
