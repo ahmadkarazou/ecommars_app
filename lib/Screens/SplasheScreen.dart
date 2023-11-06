@@ -1,4 +1,5 @@
-import 'package:ecommars_app/registerScreen.dart';
+
+import 'package:ecommars_app/Screens/registerScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -25,12 +26,12 @@ class _SplashScreenState extends State<SplashScreen> {
       child: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(height: 20),
-                Text(
+                const SizedBox(height: 20),
+                const Text(
                   'TOKOTO',
                   style: TextStyle(
                       fontSize: 40,
@@ -38,8 +39,8 @@ class _SplashScreenState extends State<SplashScreen> {
                       fontFamily: 'muli',
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 40),
-                Text(
+                const SizedBox(height: 40),
+                const Text(
                   'welcome to Tokoto, Let\'s shop!',
                   style: TextStyle(
                       fontSize: 20,
@@ -47,13 +48,13 @@ class _SplashScreenState extends State<SplashScreen> {
                       fontWeight: FontWeight.w100,
                       color: Colors.grey),
                 ),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 SizedBox(
                   width: double.infinity,
                   height: 350,
                   child: onpordImge(),
                 ),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 SmoothPageIndicator(
 
                   effect:  WormEffect(
@@ -66,7 +67,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   count: img.length,
 
                 ),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 SizedBox(
                   height: 50,
                   width: double.infinity,
