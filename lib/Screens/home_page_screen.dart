@@ -203,51 +203,51 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   ],
                 ),
               ),
-              // Padding(
-              //   padding: EdgeInsets.all(20),
-              //   child: ListView(
-              //     scrollDirection: Axis.horizontal,
-              //     children: [
-              //       Stack(
-              //         children: [
-              //           Container(
-              //             decoration: BoxDecoration(
-              //               color: Colors.deepPurple,
-              //               borderRadius: BorderRadius.all(
-              //                 Radius.circular(24),
-              //               ),
-              //             ),
-              //             margin: EdgeInsets.symmetric(horizontal: 8),
-              //             height: 110,
-              //           ),
-              //           Padding(
-              //             padding: const EdgeInsets.all(22.0),
-              //             child: Column(
-              //               crossAxisAlignment: CrossAxisAlignment.start,
-              //               children: [
-              //                 Text(
-              //                   'A Summer Surpise',
-              //                   style: TextStyle(
-              //                     color: Colors.white,
-              //                     fontSize: 14,
-              //                   ),
-              //                 ),
-              //                 SizedBox(height: 10),
-              //                 Text(
-              //                   'Cashback 20%',
-              //                   style: TextStyle(
-              //                     color: Colors.white,
-              //                     fontSize: 30,
-              //                   ),
-              //                 ),
-              //               ],
-              //             ),
-              //           )
-              //         ],
-              //       ),
-              //     ],
-              //   ),
-              // )
+              Padding(
+                padding: EdgeInsets.all(20),
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Stack(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.deepPurple,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(24),
+                            ),
+                          ),
+                          margin: EdgeInsets.symmetric(horizontal: 8),
+                          height: 110,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(22.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'A Summer Surpise',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                'Cashback 20%',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30,
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),
