@@ -1,4 +1,5 @@
 import 'package:ecommars_app/Screens/forgot_password_Screen.dart';
+import 'package:ecommars_app/Screens/home_page_screen.dart';
 import 'package:ecommars_app/Screens/registerScreen.dart';
 
 import 'package:flutter/material.dart';
@@ -121,15 +122,15 @@ class _SignInScreenState extends State<SignInScreen> {
                     height: 60,
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
-                      // onPressed: () {
-                      //   Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) =>
-                      //             const CompleteProfileScreen()),
-                      //   );
-                      //},
+
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const HomePageScreen()),
+                        );
+                      },
                       child: const Text(
                         'Continue',
                         style: TextStyle(fontSize: 20, color: Colors.white),
