@@ -13,60 +13,95 @@ class _HomePageScreenState extends State<HomePageScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        bottomNavigationBar: BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(
+                icon: SvgPicture.asset('assets/icons/Shop Icon.svg'),
+                label: ''),
+            BottomNavigationBarItem(
+                icon: SvgPicture.asset('assets/icons/Heart Icon.svg'),
+                label: ''),
+            BottomNavigationBarItem(
+                icon: SvgPicture.asset('assets/icons/Chat bubble Icon.svg'),
+                label: ''),
+            BottomNavigationBarItem(
+                icon: SvgPicture.asset('assets/icons/User.svg'), label: ''),
+          ],
+        ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: SingleChildScrollView(
             child: Column(
               children: [
                 const SizedBox(height: 10),
-                Container(
-                  height: 80,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        width: 220,
-                        child: TextField(
-                          decoration: InputDecoration(
-                            counter: const Text(''),
-                            filled: true,
-                            fillColor: Colors.grey[200],
-                            contentPadding: const EdgeInsets.all(15),
-                            floatingLabelBehavior: FloatingLabelBehavior.always,
-                            hintText: 'Search product',
-                            prefixIcon: const Icon(Icons.search),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(20),
-                                ),
-                                borderSide:
-                                    BorderSide(color: Colors.grey[200]!)),
-                          ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      width: 250,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          counter: const Text(''),
+                          filled: true,
+                          fillColor: Colors.grey[200],
+                          contentPadding: const EdgeInsets.all(15),
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          hintText: 'Search product',
+                          prefixIcon: const Icon(Icons.search),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                              borderSide: BorderSide(color: Colors.grey[200]!)),
                         ),
                       ),
-                      const SizedBox(width: 10),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStatePropertyAll(Colors.grey[200])),
-                        child: SizedBox(
-                            child:
-                                SvgPicture.asset('assets/icons/Cart Icon.svg')),
+                    ),
+                    const SizedBox(width: 10),
+                    Container(
+                      padding: EdgeInsets.all(12),
+                      margin: EdgeInsets.only(bottom: 20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: Color.fromRGBO(234, 237, 237, .5),
                       ),
-                      const SizedBox(width: 10),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStatePropertyAll(Colors.grey[200])),
-                        child: SizedBox(
-                            child: SvgPicture.asset('assets/icons/Bell.svg')),
-                      ),
-                    ],
-                  ),
+                      width: 50,
+                      height: 50,
+                      child: SvgPicture.asset('assets/icons/Cart Icon.svg'),
+                    ),
+                    const SizedBox(width: 10),
+                    Stack(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(12),
+                          margin: EdgeInsets.only(bottom: 20),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: Color.fromRGBO(234, 237, 237, .5),
+                          ),
+                          width: 50,
+                          height: 50,
+                          child: SvgPicture.asset('assets/icons/Bell.svg'),
+                        ),
+                        Positioned(
+                            left:33,
+                            child: Container(
+                              width: 17,
+                              height: 17,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.red,
+                              ),
+                              child: Text(
+                                '3',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 12),
+                              ),
+                            ))
+                      ],
+                    ),
+                  ],
                 ),
-                const SizedBox(height: 10),
                 Stack(
                   children: [
                     Container(
@@ -191,9 +226,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   ],
                 ),
                 const SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: const Row(
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
@@ -304,13 +339,13 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: const Row(
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Special for you',
+                        'Popular Products',
                         style: TextStyle(fontSize: 25),
                       ),
                       Text(
@@ -330,7 +365,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               decoration: const BoxDecoration(
-                                color: Color.fromRGBO(234, 237, 237,.5),
+                                color: Color.fromRGBO(234, 237, 237, .5),
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(24),
                                 ),
@@ -405,7 +440,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               decoration: const BoxDecoration(
-                                color: Color.fromRGBO(234, 237, 237,.5),
+                                color: Color.fromRGBO(234, 237, 237, .5),
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(24),
                                 ),
@@ -464,7 +499,6 @@ class _HomePageScreenState extends State<HomePageScreen> {
                                       backgroundColor: Colors.grey[100],
                                       child: SvgPicture.asset(
                                         'assets/icons/Heart Icon_2.svg',
-
                                       ),
                                     )
                                   ],
@@ -480,7 +514,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               decoration: const BoxDecoration(
-                                color: Color.fromRGBO(234, 237, 237,.5),
+                                color: Color.fromRGBO(234, 237, 237, .5),
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(24),
                                 ),
@@ -503,7 +537,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Nike Sport white',
+                                'Glove',
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontFamily: 'Muli',
@@ -513,7 +547,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                               ),
                               SizedBox(height: 5),
                               Text(
-                                'Man Pant',
+                                'Polyg',
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontFamily: 'Muli',
@@ -526,7 +560,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                                 child: Row(
                                   children: [
                                     Text(
-                                      '\$50.5',
+                                      '\$36.5',
                                       style: TextStyle(
                                         color: Colors.orange,
                                         fontFamily: 'Muli',
@@ -539,7 +573,6 @@ class _HomePageScreenState extends State<HomePageScreen> {
                                       backgroundColor: Colors.grey[100],
                                       child: SvgPicture.asset(
                                         'assets/icons/Heart Icon_2.svg',
-
                                       ),
                                     )
                                   ],
