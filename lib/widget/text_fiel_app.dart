@@ -20,7 +20,7 @@ class TextFieldApp extends StatelessWidget {
         counter: const Text(''),
         contentPadding: const EdgeInsets.all(15),
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        hintText:hintText??"",
+        hintText:hintText,
         suffixIcon: iconTextField,
         label: Text(label!),
         border: const OutlineInputBorder(

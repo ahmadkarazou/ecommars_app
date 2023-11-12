@@ -47,27 +47,28 @@ class _OTPVeificationScreenState extends State<OTPVeificationScreen> {
                   children: [
                     SizedBox(
                       width: 70,
-                      height: 200,
-                      child:TextFieldApp(hintText: null, label: null, iconTextField: null),
+                      height: 70,
+                      child:TextFieldApp(),
                        
                     ),
                     SizedBox(
                       width: 70,
-                      height: 200,
-                     child:TextFieldApp(hintText: null, label: null, iconTextField: null),
+                      height:70,
+                     child:TextFieldApp(),
                     ),
                     SizedBox(
                       width: 70,
-                      height: 200,
-                      child:TextFieldApp(hintText: null, label: null, iconTextField: null),
+                      height: 70,
+                      child:TextFieldApp(),
                     ),
                     SizedBox(
                       width: 70,
-                      height: 200,
-                      child:TextFieldApp(hintText: null, label: null, iconTextField: null),
+                      height: 70,
+                      child:TextFieldApp(),
                     ),
                   ],
                 ),
+                 const SizedBox(height: 80),
                 SizedBox(
                   height: 60,
                   width: double.infinity,
