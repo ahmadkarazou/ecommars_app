@@ -23,75 +23,73 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: SingleChildScrollView(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const SizedBox(height: 20),
-                const Text(
-                  'TOKOTO',
-                  style: TextStyle(
-                      fontSize: 40,
-                      color: Colors.orange,
-                      fontFamily: 'muli',
-                      fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 40),
-                const Text(
-                  'welcome to Tokoto, Let\'s shop!',
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: 'Muli',
-                      fontWeight: FontWeight.w100,
-                      color: Colors.grey),
-                ),
-                const SizedBox(height: 40),
-                SizedBox(
-                  width: double.infinity,
-                  height: 350,
-                  child: onpordImge(),
-                ),
-                const SizedBox(height: 40),
-                SmoothPageIndicator(
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const SizedBox(height: 20),
+              const Text(
+                'TOKOTO',
+                style: TextStyle(
+                    fontSize: 40,
+                    color: Colors.orange,
+                    fontFamily: 'muli',
+                    fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 40),
+              const Text(
+                'welcome to Tokoto, Let\'s shop!',
+                style: TextStyle(
+                    fontSize: 20,
+                    fontFamily: 'Muli',
+                    fontWeight: FontWeight.w100,
+                    color: Colors.grey),
+              ),
+              const SizedBox(height: 40),
+              SizedBox(
+                width: double.infinity,
+                height: 350,
+                child: onpordImge(),
+              ),
+              const SizedBox(height: 40),
+              SmoothPageIndicator(
 
-                  effect:  WormEffect(
-                    //dotHeight: 14  ,
-                    //dotWidth: 40,
-                    dotColor: Colors.grey,
-                    activeDotColor: Colors.orange
-                  ),
-                  controller: controller,
-                  count: img.length,
+                effect:  WormEffect(
+                  //dotHeight: 14  ,
+                  //dotWidth: 40,
+                  dotColor: Colors.grey,
+                  activeDotColor: Colors.orange
+                ),
+                controller: controller,
+                count: img.length,
 
-                ),
-                const SizedBox(height: 40),
-                SizedBox(
-                  height: 50,
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const RegisterScreen()),
-                      );
-                    },
-                    child: Text(
-                      'Continue',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll(Colors.orange),
-                        fixedSize: MaterialStatePropertyAll(
-                            Size.fromWidth(double.infinity))),
+              ),
+              const SizedBox(height: 40),
+              SizedBox(
+                height: 50,
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const RegisterScreen()),
+                    );
+                  },
+                  child: Text(
+                    'Continue',
+                    style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStatePropertyAll(Colors.orange),
+                      fixedSize: MaterialStatePropertyAll(
+                          Size.fromWidth(double.infinity))),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
