@@ -13,16 +13,16 @@ class ButtonApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed:onPressed,
-      
-      child: Text(
-        'Continue',
-        style: TextStyle(fontSize: 20, color: Colors.white),
-      ),
-      style: ButtonStyle(
+      style: const ButtonStyle(
           backgroundColor:
               MaterialStatePropertyAll(Colors.deepOrange),
           fixedSize: MaterialStatePropertyAll(
               Size.fromWidth(double.infinity))),
+      
+      child: const Text(
+        'Continue',
+        style: TextStyle(fontSize: 20, color: Colors.white),
+      ),
     );
   }
 }

@@ -12,7 +12,7 @@ class SupTitleText extends StatelessWidget {
     return  Text(
       title,
       textAlign: TextAlign.center ,
-      style: TextStyle(
+      style: const TextStyle(
           fontSize: 14,
           fontFamily: 'Muli',
           fontWeight: FontWeight.w100,

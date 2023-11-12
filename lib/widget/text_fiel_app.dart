@@ -17,13 +17,13 @@ class TextFieldApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  TextField(
       decoration: InputDecoration(
-        counter: Text(''),
-        contentPadding: EdgeInsets.all(15),
+        counter: const Text(''),
+        contentPadding: const EdgeInsets.all(15),
         floatingLabelBehavior: FloatingLabelBehavior.always,
         hintText:hintText??"",
-        suffixIcon: iconTextField??null,
-        label: Text(""),
-        border: OutlineInputBorder(
+        suffixIcon: iconTextField,
+        label: Text(label!),
+        border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(20),
             ),
