@@ -1,4 +1,8 @@
 import 'package:ecommars_app/Screens/sign_in_screen.dart';
+import 'package:ecommars_app/widget/button_app.dart';
+import 'package:ecommars_app/widget/sup_title_text.dart';
+import 'package:ecommars_app/widget/text_fiel_app.dart';
+import 'package:ecommars_app/widget/title_text.dart';
 import 'package:flutter/material.dart';
 
 class OTPVeificationScreen extends StatefulWidget {
@@ -21,128 +25,62 @@ class _OTPVeificationScreenState extends State<OTPVeificationScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 80),
-                Text(
-                  'OTP Verification',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 30,
-                      fontFamily: 'Muli',
-                      fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  'We send your code to +1 898 860 ***',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.grey),
-                ),
+                const SizedBox(height: 80),
+                TitleText(title: 'OTP Verification', colorText: Colors.black, fontSize: 30),
+               SupTitleText(title: 'We send your code to +1 898 860 ***'),
+                
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      'This code will expired in ',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                    Text(
+                    SupTitleText(title:  'This code will expired in '),
+                   
+                    const Text(
                       '00:13',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.orange),
                     ),
                   ],
                 ),
-                SizedBox(height: 100),
+                const SizedBox(height: 100),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     SizedBox(
                       width: 70,
                       height: 200,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          counterStyle: TextStyle(fontSize: 30),
-                          counter: Text(''),
-                          contentPadding: EdgeInsets.all(15),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20),
-                              ),
-                              borderSide: BorderSide(width: 2)),
-                        ),
-                      ),
+                      child:TextFieldApp(hintText: null, label: null, iconTextField: null),
+                       
                     ),
                     SizedBox(
                       width: 70,
                       height: 200,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          counter: Text(''),
-                          counterStyle: TextStyle(fontSize: 30),
-                          contentPadding: EdgeInsets.all(15),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20),
-                              ),
-                              borderSide: BorderSide(width: 2)),
-                        ),
-                      ),
+                     child:TextFieldApp(hintText: null, label: null, iconTextField: null),
                     ),
                     SizedBox(
                       width: 70,
                       height: 200,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          counter: Text(''),
-                          counterStyle: TextStyle(fontSize: 30),
-                          contentPadding: EdgeInsets.all(15),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20),
-                              ),
-                              borderSide: BorderSide(width: 2)),
-                        ),
-                      ),
+                      child:TextFieldApp(hintText: null, label: null, iconTextField: null),
                     ),
                     SizedBox(
                       width: 70,
                       height: 200,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          counter: Text(''),
-                          counterStyle: TextStyle(fontSize: 50),
-                          contentPadding: EdgeInsets.all(15),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20),
-                              ),
-                              borderSide: BorderSide(width: 2)),
-                        ),
-                      ),
+                      child:TextFieldApp(hintText: null, label: null, iconTextField: null),
                     ),
                   ],
                 ),
                 SizedBox(
                   height: 60,
                   width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
+                  child: ButtonApp(onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const SignInScreen()),
                       );
-                    },
-                    child: Text(
-                      'Continue',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll(Colors.orange),
-                        fixedSize: MaterialStatePropertyAll(
-                            Size.fromWidth(double.infinity))),
-                  ),
+                    },)
+                 
                 ),
-                SizedBox(height: 40),
+               const SizedBox(height: 40),
                 TextButton(
                   onPressed: () {},
                   child: const Text(

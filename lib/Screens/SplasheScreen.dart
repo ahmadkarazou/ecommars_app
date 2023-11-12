@@ -1,8 +1,11 @@
 
 import 'package:ecommars_app/Screens/registerScreen.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:ecommars_app/widget/button_app.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import '../widget/sup_title_text.dart';
+import '../widget/title_text.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -30,23 +33,9 @@ class _SplashScreenState extends State<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const SizedBox(height: 20),
-              const Text(
-                'TOKOTO',
-                style: TextStyle(
-                    fontSize: 40,
-                    color: Colors.orange,
-                    fontFamily: 'muli',
-                    fontWeight: FontWeight.bold),
-              ),
+              TitleText(title: 'TOKOTO',colorText: Colors.deepOrange ,fontSize: 40),
               const SizedBox(height: 40),
-              const Text(
-                'welcome to Tokoto, Let\'s shop!',
-                style: TextStyle(
-                    fontSize: 20,
-                    fontFamily: 'Muli',
-                    fontWeight: FontWeight.w100,
-                    color: Colors.grey),
-              ),
+              SupTitleText(title: 'welcome to Tokoto, Let\'s shop!'),
               const SizedBox(height: 40),
               SizedBox(
                 width: double.infinity,
@@ -56,9 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
               const SizedBox(height: 40),
               SmoothPageIndicator(
 
-                effect:  WormEffect(
-                  //dotHeight: 14  ,
-                  //dotWidth: 40,
+                effect:  const WormEffect(
                   dotColor: Colors.grey,
                   activeDotColor: Colors.orange
                 ),
@@ -70,24 +57,14 @@ class _SplashScreenState extends State<SplashScreen> {
               SizedBox(
                 height: 50,
                 width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const RegisterScreen()),
-                    );
-                  },
-                  child: Text(
-                    'Continue',
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  ),
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStatePropertyAll(Colors.orange),
-                      fixedSize: MaterialStatePropertyAll(
-                          Size.fromWidth(double.infinity))),
-                ),
+                child: ButtonApp(onPressed:
+                 () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => const RegisterScreen()),
+        );
+      }, ),
               ),
             ],
           ),

@@ -1,8 +1,14 @@
 import 'package:ecommars_app/Screens/forgot_password_Screen.dart';
 import 'package:ecommars_app/Screens/home_page_screen.dart';
 import 'package:ecommars_app/Screens/registerScreen.dart';
+import 'package:ecommars_app/widget/button_app.dart';
+import 'package:ecommars_app/widget/sup_title_text.dart';
+import 'package:ecommars_app/widget/title_text.dart';
 
 import 'package:flutter/material.dart';
+
+import '../widget/sign_in_sochi_Button.dart';
+import '../widget/text_fiel_app.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -25,61 +31,12 @@ class _SignInScreenState extends State<SignInScreen> {
             child: Center(
               child: Column(
                 children: [
-                  const Text(
-                    'Welcome Back',
-                    style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.black,
-                        fontFamily: 'muli',
-                        fontWeight: FontWeight.bold),
-                  ),
-                  const Text(
-                    'Sign in with your email and password ',
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontFamily: 'Muli',
-                        fontWeight: FontWeight.w100,
-                        color: Colors.grey),
-                  ),
-                  const Text(
-                    'or continue with social media',
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontFamily: 'Muli',
-                        fontWeight: FontWeight.w100,
-                        color: Colors.grey),
-                  ),
+                  TitleText(title: 'Welcome Back', colorText: Colors.black, fontSize: 30),
+                  SupTitleText(title: 'Sign in with your email and password\n or continue with social media'),
                   const SizedBox(height: 60),
-                  const TextField(
-                    decoration: InputDecoration(
-                      counter: Text(''),
-                      contentPadding: EdgeInsets.all(15),
-                      floatingLabelBehavior: FloatingLabelBehavior.always,
-                      hintText: ' Enter your email',
-                      suffixIcon: Icon(Icons.email_outlined),
-                      label: Text('Email'),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(20),
-                          ),
-                          borderSide: BorderSide(width: 2)),
-                    ),
-                  ),
-                  const TextField(
-                    decoration: InputDecoration(
-                      counter: Text(''),
-                      contentPadding: EdgeInsets.all(15),
-                      floatingLabelBehavior: FloatingLabelBehavior.always,
-                      hintText: ' Enter your password',
-                      suffixIcon: Icon(Icons.lock_outline),
-                      label: Text('Password'),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(20),
-                          ),
-                          borderSide: BorderSide(width: 2)),
-                    ),
-                  ),
+                  TextFieldApp(label: 'Email',hintText:  ' Enter your email',iconTextField:const Icon(Icons.email_outlined), ),
+                   TextFieldApp(label: 'Password',hintText:  ' Enter your password',iconTextField:const Icon(Icons.lock_outline), ),
+                  
                   Row(
                     children: [
                       Checkbox(
@@ -89,14 +46,8 @@ class _SignInScreenState extends State<SignInScreen> {
                               set = value;
                             });
                           }),
-                      const Text(
-                        'Remember me',
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontFamily: 'Muli',
-                            fontWeight: FontWeight.w100,
-                            color: Colors.grey),
-                      ),
+                          SupTitleText(title: 'Remember me'),
+                     
                       const SizedBox(width: 80),
                       TextButton(
                           onPressed: () {
@@ -121,64 +72,23 @@ class _SignInScreenState extends State<SignInScreen> {
                   SizedBox(
                     height: 60,
                     width: double.infinity,
-                    child: ElevatedButton(
-
-                      onPressed: () {
+                    child: ButtonApp(onPressed: () {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
                                   const HomePageScreen()),
                         );
-                      },
-                      child: const Text(
-                        'Continue',
-                        style: TextStyle(fontSize: 20, color: Colors.white),
-                      ),
-                      style: const ButtonStyle(
-                          backgroundColor:
-                              MaterialStatePropertyAll(Colors.orange),
-                          fixedSize: MaterialStatePropertyAll(
-                              Size.fromWidth(double.infinity))),
-                    ),
+                      },)
                   ),
                   const SizedBox(height: 70),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CircleAvatar(
-                        child: Image(
-                          width: 20,
-                          image: AssetImage('assets/image/logo-g.png'),
-                        ),
-                      ),
-                      SizedBox(width: 20),
-                      CircleAvatar(
-                        child: Image(
-                          width: 20,
-                          image: AssetImage('assets/image/fasebook.png'),
-                        ),
-                      ),
-                      SizedBox(width: 20),
-                      CircleAvatar(
-                        child: Image(
-                          width: 20,
-                          image: AssetImage('assets/image/twitter.png'),
-                        ),
-                      ),
-                    ],
-                  ),
+                  const SignInSochiButton(),
                   const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        'Din\'t have on account?',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontFamily: 'Muli',
-                            color: Colors.grey),
-                      ),
+                      SupTitleText(title: 'Din\'t have on account?'),
+                     
                       TextButton(
                         onPressed: () {
                           Navigator.push(

@@ -1,6 +1,10 @@
 
 import 'package:ecommars_app/Screens/Complete_profile_Screen.dart';
 import 'package:ecommars_app/Screens/registerScreen.dart';
+import 'package:ecommars_app/widget/button_app.dart';
+import 'package:ecommars_app/widget/sup_title_text.dart';
+import 'package:ecommars_app/widget/text_fiel_app.dart';
+import 'package:ecommars_app/widget/title_text.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
@@ -24,82 +28,32 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             child: Center(
               child: Column(
                 children: [
-                  const Text(
-                    'Forgot Password',
-                    style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.black,
-                        fontFamily: 'muli',
-                        fontWeight: FontWeight.bold),
-                  ),
-                  const Text(
-                    'please enter your email and we will send ',
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontFamily: 'Muli',
-                        fontWeight: FontWeight.w100,
-                        color: Colors.grey),
-                  ),
-                  const Text(
-                    'you a link to return to your account',
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontFamily: 'Muli',
-                        fontWeight: FontWeight.w100,
-                        color: Colors.grey),
-                  ),
                   const SizedBox(height: 70),
-                  const TextField(
-                    decoration: InputDecoration(
-                      counter: Text(''),
-                      contentPadding: EdgeInsets.all(15),
-                      floatingLabelBehavior: FloatingLabelBehavior.always,
-                      hintText: ' Enter your email',
-                      suffixIcon: Icon(Icons.email_outlined),
-                      label: Text('Email'),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(20),
-                          ),
-                          borderSide: BorderSide(width: 2)),
-                    ),
-                  ),
+                  TitleText(title:  'Forgot Password', colorText: Colors.black, fontSize: 30),
+                  SupTitleText(title: 'please enter your email and we will send\n you a link to return to your account'),
+                  const SizedBox(height: 70),
+                  TextFieldApp(hintText: ' Enter your email',iconTextField:const Icon(Icons.email_outlined),label: 'Email', ),
+                  
                   const SizedBox(height: 70),
                   SizedBox(
                     height: 60,
                     width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
+                    child: ButtonApp(onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
                                   const CompleteProfileScreen()),
                         );
-                      },
-                      style: const ButtonStyle(
-                          backgroundColor:
-                              MaterialStatePropertyAll(Colors.orange),
-                          fixedSize: MaterialStatePropertyAll(
-                              Size.fromWidth(double.infinity))),
-                      child: const Text(
-                        'Continue',
-                        style: TextStyle(fontSize: 20, color: Colors.white),
-                      ),
-                    ),
+                      },)
                   ),
-                  const SizedBox(height: 70),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 90),
+                  
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        'Din\'t have on account?',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontFamily: 'Muli',
-                            color: Colors.grey),
-                      ),
+                      SupTitleText(title: 'Din\'t have on account?'),
+                      
                       TextButton(
                         onPressed: () {
                           Navigator.push(
@@ -108,7 +62,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                   builder: (context) =>
                                       const RegisterScreen()));
                         },
-                        child: Text(
+                        child: const Text(
                           'Sign Up',
                           style: TextStyle(
                               fontSize: 16,
