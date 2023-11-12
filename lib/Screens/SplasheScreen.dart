@@ -1,11 +1,13 @@
 
 import 'package:ecommars_app/Screens/registerScreen.dart';
+
 import 'package:ecommars_app/widget/button_app.dart';
+import 'package:ecommars_app/widget/sup_title_text.dart';
+import 'package:ecommars_app/widget/title_text.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../widget/sup_title_text.dart';
-import '../widget/title_text.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

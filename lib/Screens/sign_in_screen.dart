@@ -2,13 +2,13 @@ import 'package:ecommars_app/Screens/forgot_password_Screen.dart';
 import 'package:ecommars_app/Screens/home_page_screen.dart';
 import 'package:ecommars_app/Screens/registerScreen.dart';
 import 'package:ecommars_app/widget/button_app.dart';
+import 'package:ecommars_app/widget/sign_in_sochi_Button.dart';
 import 'package:ecommars_app/widget/sup_title_text.dart';
+import 'package:ecommars_app/widget/text_fiel_app.dart';
 import 'package:ecommars_app/widget/title_text.dart';
 
 import 'package:flutter/material.dart';
 
-import '../widget/sign_in_sochi_Button.dart';
-import '../widget/text_fiel_app.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
