@@ -25,7 +25,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 icon: SvgPicture.asset('assets/icons/Chat bubble Icon.svg'),
                 label: ''),
             BottomNavigationBarItem(
-                icon: SvgPicture.asset('assets/icons/User.svg'), label: ''),
+                icon: SvgPicture.asset('assets/icons/User.svg',color: Colors.grey,), label: ''),
           ],
         ),
         body: Padding(
@@ -83,7 +83,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                           child: SvgPicture.asset('assets/icons/Bell.svg'),
                         ),
                         Positioned(
-                            left:33,
+                            left: 33,
                             child: Container(
                               width: 17,
                               height: 17,
@@ -226,7 +226,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   ],
                 ),
                 const SizedBox(height: 10),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -235,9 +235,12 @@ class _HomePageScreenState extends State<HomePageScreen> {
                         'Special for you',
                         style: TextStyle(fontSize: 25),
                       ),
-                      Text(
-                        'See More',
-                        style: TextStyle(color: Colors.grey),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'See More',
+                          style: TextStyle(color: Colors.grey),
+                        ),
                       ),
                     ],
                   ),
@@ -265,28 +268,33 @@ class _HomePageScreenState extends State<HomePageScreen> {
                             height: 130,
                             width: 300,
                           ),
-                          const Padding(
-                            padding: EdgeInsets.all(18.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Smartphone',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 30,
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                                child: TextButton(
+                                  onPressed: () {},
+                                  child: Text(
+                                    'Smartphone',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 30,
+                                    ),
                                   ),
                                 ),
-                                SizedBox(height: 5),
-                                Text(
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 25),
+                                child: Text(
                                   '18 Brands',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 14,
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           )
                         ],
                       ),
@@ -309,29 +317,34 @@ class _HomePageScreenState extends State<HomePageScreen> {
                             height: 130,
                             width: 300,
                           ),
-                          const Padding(
-                            padding: EdgeInsets.all(18.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Fashion',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 25,
-                                      fontFamily: 'Muli',
-                                      fontWeight: FontWeight.bold),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                                child: TextButton(
+                                  onPressed: () {},
+                                  child: Text(
+                                    'Fashion',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 25,
+                                        fontFamily: 'Muli',
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 ),
-                                SizedBox(height: 5),
-                                Text(
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 25.0),
+                                child: Text(
                                   '24 Brands',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 14,
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           )
                         ],
                       ),
@@ -339,7 +352,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -348,9 +361,12 @@ class _HomePageScreenState extends State<HomePageScreen> {
                         'Popular Products',
                         style: TextStyle(fontSize: 25),
                       ),
-                      Text(
-                        'See More',
-                        style: TextStyle(color: Colors.grey),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'See More',
+                          style: TextStyle(color: Colors.grey),
+                        ),
                       ),
                     ],
                   ),
@@ -359,228 +375,237 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              decoration: const BoxDecoration(
-                                color: Color.fromRGBO(234, 237, 237, .5),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(24),
-                                ),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(25.0),
-                                child: Image(
-                                  image: AssetImage(
-                                    'assets/image/ps4_console_white_1.png',
+                      TextButton(
+                        onPressed: () {},
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: const BoxDecoration(
+                                  color: Color.fromRGBO(234, 237, 237, .5),
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(24),
                                   ),
-                                  width: 40,
-                                  height: 40,
                                 ),
-                              ),
-                              height: 175,
-                              width: 175,
-                            ),
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'wireless Controller',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: 'Muli',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                ),
-                              ),
-                              SizedBox(height: 5),
-                              Text(
-                                'for PS4',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: 'Muli',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14,
-                                ),
-                              ),
-                              SizedBox(height: 5),
-                              SizedBox(
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      '\$64.99',
-                                      style: TextStyle(
-                                        color: Colors.orange,
-                                        fontFamily: 'Muli',
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18,
-                                      ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(25.0),
+                                  child: Image(
+                                    image: AssetImage(
+                                      'assets/image/ps4_console_white_1.png',
                                     ),
-                                    SizedBox(width: 50),
-                                    CircleAvatar(
-                                      backgroundColor: Colors.red[100],
-                                      child: SvgPicture.asset(
-                                        'assets/icons/Heart Icon_2.svg',
-                                        color: Colors.red,
-                                      ),
-                                    )
-                                  ],
+                                    width: 40,
+                                    height: 40,
+                                  ),
                                 ),
+                                height: 175,
+                                width: 175,
                               ),
-                            ],
-                          )
-                        ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'wireless Controller',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Muli',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                Text(
+                                  'for PS4',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Muli',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                SizedBox(
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        '\$64.99',
+                                        style: TextStyle(
+                                          color: Colors.orange,
+                                          fontFamily: 'Muli',
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                        ),
+                                      ),
+                                      SizedBox(width: 50),
+                                      CircleAvatar(
+                                        backgroundColor: Colors.red[100],
+                                        child: SvgPicture.asset(
+                                          'assets/icons/Heart Icon_2.svg',
+                                          color: Colors.red,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
                       ),
-                      Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              decoration: const BoxDecoration(
-                                color: Color.fromRGBO(234, 237, 237, .5),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(24),
-                                ),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(25.0),
-                                child: Image(
-                                  image: AssetImage(
-                                    'assets/image/Image Popular Product 2.png',
+                      TextButton(
+                        onPressed: () {  },
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: const BoxDecoration(
+                                  color: Color.fromRGBO(234, 237, 237, .5),
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(24),
                                   ),
-                                  width: 40,
-                                  height: 40,
                                 ),
-                              ),
-                              height: 175,
-                              width: 175,
-                            ),
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Nike Sport white',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: 'Muli',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                ),
-                              ),
-                              SizedBox(height: 5),
-                              Text(
-                                'Man Pant',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: 'Muli',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14,
-                                ),
-                              ),
-                              SizedBox(height: 5),
-                              SizedBox(
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      '\$50.5',
-                                      style: TextStyle(
-                                        color: Colors.orange,
-                                        fontFamily: 'Muli',
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18,
-                                      ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(25.0),
+                                  child: Image(
+                                    image: AssetImage(
+                                      'assets/image/Image Popular Product 2.png',
                                     ),
-                                    SizedBox(width: 50),
-                                    CircleAvatar(
-                                      backgroundColor: Colors.grey[100],
-                                      child: SvgPicture.asset(
-                                        'assets/icons/Heart Icon_2.svg',
-                                      ),
-                                    )
-                                  ],
+                                    width: 40,
+                                    height: 40,
+                                  ),
                                 ),
+                                height: 175,
+                                width: 175,
                               ),
-                            ],
-                          )
-                        ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Nike Sport white',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Muli',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                Text(
+                                  'Man Pant',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Muli',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                SizedBox(
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        '\$50.5',
+                                        style: TextStyle(
+                                          color: Colors.orange,
+                                          fontFamily: 'Muli',
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                        ),
+                                      ),
+                                      SizedBox(width: 50),
+                                      CircleAvatar(
+                                        backgroundColor: Colors.grey[100],
+                                        child: SvgPicture.asset(
+                                          'assets/icons/Heart Icon_2.svg',
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
                       ),
-                      Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              decoration: const BoxDecoration(
-                                color: Color.fromRGBO(234, 237, 237, .5),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(24),
-                                ),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(25.0),
-                                child: Image(
-                                  image: AssetImage(
-                                    'assets/image/Image Popular Product 3.png',
+                      TextButton(
+                        onPressed: () {  },
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: const BoxDecoration(
+                                  color: Color.fromRGBO(234, 237, 237, .5),
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(24),
                                   ),
-                                  width: 40,
-                                  height: 40,
                                 ),
-                              ),
-                              height: 175,
-                              width: 175,
-                            ),
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Glove',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: 'Muli',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                ),
-                              ),
-                              SizedBox(height: 5),
-                              Text(
-                                'Polyg',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: 'Muli',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14,
-                                ),
-                              ),
-                              SizedBox(height: 5),
-                              SizedBox(
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      '\$36.5',
-                                      style: TextStyle(
-                                        color: Colors.orange,
-                                        fontFamily: 'Muli',
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18,
-                                      ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(25.0),
+                                  child: Image(
+                                    image: AssetImage(
+                                      'assets/image/Image Popular Product 3.png',
                                     ),
-                                    SizedBox(width: 50),
-                                    CircleAvatar(
-                                      backgroundColor: Colors.grey[100],
-                                      child: SvgPicture.asset(
-                                        'assets/icons/Heart Icon_2.svg',
-                                      ),
-                                    )
-                                  ],
+                                    width: 40,
+                                    height: 40,
+                                  ),
                                 ),
+                                height: 175,
+                                width: 175,
                               ),
-                            ],
-                          )
-                        ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Glove',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Muli',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                Text(
+                                  'Polyg',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Muli',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                SizedBox(
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        '\$36.5',
+                                        style: TextStyle(
+                                          color: Colors.orange,
+                                          fontFamily: 'Muli',
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                        ),
+                                      ),
+                                      SizedBox(width: 50),
+                                      CircleAvatar(
+                                        backgroundColor: Colors.grey[100],
+                                        child: SvgPicture.asset(
+                                          'assets/icons/Heart Icon_2.svg',
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                     ],
                   ),
