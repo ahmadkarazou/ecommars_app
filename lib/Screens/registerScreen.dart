@@ -138,7 +138,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ],
               ),
               const SizedBox(height: 50),
-              const Text('By continuing your confirm thal you agree',
+              const Text('By continuing your confirm that you agree',
                    style: TextStyle(
                   fontSize: 14,
                   fontFamily: 'Muli',

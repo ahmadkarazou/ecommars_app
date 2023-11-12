@@ -1,6 +1,7 @@
 
 import 'package:ecommars_app/Screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
+import 'OTP_Verification_Screen.dart';
 
 class CompleteProfileScreen extends StatefulWidget {
   const CompleteProfileScreen({super.key});
@@ -116,7 +117,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const SignInScreen()),
+                              builder: (context) =>const OTPVeificationScreen()),
                         );
                       },
                       child: Text(
