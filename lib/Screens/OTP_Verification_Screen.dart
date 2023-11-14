@@ -48,23 +48,23 @@ class _OTPVeificationScreenState extends State<OTPVeificationScreen> {
                     SizedBox(
                       width: 70,
                       height: 70,
-                      child:TextFieldApp(),
-                       
+                      child:TextField(decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)))),
+
                     ),
                     SizedBox(
                       width: 70,
                       height:70,
-                     child:TextFieldApp(),
+                      child:TextField(decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)))),
                     ),
                     SizedBox(
                       width: 70,
                       height: 70,
-                      child:TextFieldApp(),
+                      child:TextField(decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)))),
                     ),
                     SizedBox(
                       width: 70,
                       height: 70,
-                      child:TextFieldApp(),
+                      child:TextField(decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)))),
                     ),
                   ],
                 ),

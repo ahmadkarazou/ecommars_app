@@ -375,12 +375,12 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      TextButton(
-                        onPressed: () {},
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: TextButton(
+                              onPressed: (){},
                               child: Container(
                                 decoration: const BoxDecoration(
                                   color: Color.fromRGBO(234, 237, 237, .5),
@@ -402,63 +402,63 @@ class _HomePageScreenState extends State<HomePageScreen> {
                                 width: 175,
                               ),
                             ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'wireless Controller',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontFamily: 'Muli',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
-                                  ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'wireless Controller',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: 'Muli',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
                                 ),
-                                SizedBox(height: 5),
-                                Text(
-                                  'for PS4',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontFamily: 'Muli',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                  ),
+                              ),
+                              SizedBox(height: 5),
+                              Text(
+                                'for PS4',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: 'Muli',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
                                 ),
-                                SizedBox(height: 5),
-                                SizedBox(
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        '\$64.99',
-                                        style: TextStyle(
-                                          color: Colors.orange,
-                                          fontFamily: 'Muli',
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18,
-                                        ),
+                              ),
+                              SizedBox(height: 5),
+                              SizedBox(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      '\$64.99',
+                                      style: TextStyle(
+                                        color: Colors.orange,
+                                        fontFamily: 'Muli',
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
                                       ),
-                                      SizedBox(width: 50),
-                                      CircleAvatar(
-                                        backgroundColor: Colors.red[100],
-                                        child: SvgPicture.asset(
-                                          'assets/icons/Heart Icon_2.svg',
-                                          color: Colors.red,
-                                        ),
-                                      )
-                                    ],
-                                  ),
+                                    ),
+                                    SizedBox(width: 50),
+                                    CircleAvatar(
+                                      backgroundColor: Colors.red[100],
+                                      child: SvgPicture.asset(
+                                        'assets/icons/Heart Icon_2.svg',
+                                        color: Colors.red,
+                                      ),
+                                    )
+                                  ],
                                 ),
-                              ],
-                            )
-                          ],
-                        ),
+                              ),
+                            ],
+                          )
+                        ],
                       ),
-                      TextButton(
-                        onPressed: () {  },
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: TextButton(
+                              onPressed: (){},
                               child: Container(
                                 decoration: const BoxDecoration(
                                   color: Color.fromRGBO(234, 237, 237, .5),
@@ -480,62 +480,62 @@ class _HomePageScreenState extends State<HomePageScreen> {
                                 width: 175,
                               ),
                             ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Nike Sport white',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontFamily: 'Muli',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
-                                  ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Nike Sport white',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: 'Muli',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
                                 ),
-                                SizedBox(height: 5),
-                                Text(
-                                  'Man Pant',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontFamily: 'Muli',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                  ),
+                              ),
+                              SizedBox(height: 5),
+                              Text(
+                                'Man Pant',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: 'Muli',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
                                 ),
-                                SizedBox(height: 5),
-                                SizedBox(
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        '\$50.5',
-                                        style: TextStyle(
-                                          color: Colors.orange,
-                                          fontFamily: 'Muli',
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18,
-                                        ),
+                              ),
+                              SizedBox(height: 5),
+                              SizedBox(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      '\$50.5',
+                                      style: TextStyle(
+                                        color: Colors.orange,
+                                        fontFamily: 'Muli',
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
                                       ),
-                                      SizedBox(width: 50),
-                                      CircleAvatar(
-                                        backgroundColor: Colors.grey[100],
-                                        child: SvgPicture.asset(
-                                          'assets/icons/Heart Icon_2.svg',
-                                        ),
-                                      )
-                                    ],
-                                  ),
+                                    ),
+                                    SizedBox(width: 50),
+                                    CircleAvatar(
+                                      backgroundColor: Colors.grey[100],
+                                      child: SvgPicture.asset(
+                                        'assets/icons/Heart Icon_2.svg',
+                                      ),
+                                    )
+                                  ],
                                 ),
-                              ],
-                            )
-                          ],
-                        ),
+                              ),
+                            ],
+                          )
+                        ],
                       ),
-                      TextButton(
-                        onPressed: () {  },
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: TextButton(
+                              onPressed: (){},
                               child: Container(
                                 decoration: const BoxDecoration(
                                   color: Color.fromRGBO(234, 237, 237, .5),
@@ -557,55 +557,55 @@ class _HomePageScreenState extends State<HomePageScreen> {
                                 width: 175,
                               ),
                             ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Glove',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontFamily: 'Muli',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
-                                  ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Glove',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: 'Muli',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
                                 ),
-                                SizedBox(height: 5),
-                                Text(
-                                  'Polyg',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontFamily: 'Muli',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                  ),
+                              ),
+                              SizedBox(height: 5),
+                              Text(
+                                'Polyg',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: 'Muli',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
                                 ),
-                                SizedBox(height: 5),
-                                SizedBox(
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        '\$36.5',
-                                        style: TextStyle(
-                                          color: Colors.orange,
-                                          fontFamily: 'Muli',
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18,
-                                        ),
+                              ),
+                              SizedBox(height: 5),
+                              SizedBox(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      '\$36.5',
+                                      style: TextStyle(
+                                        color: Colors.orange,
+                                        fontFamily: 'Muli',
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
                                       ),
-                                      SizedBox(width: 50),
-                                      CircleAvatar(
-                                        backgroundColor: Colors.grey[100],
-                                        child: SvgPicture.asset(
-                                          'assets/icons/Heart Icon_2.svg',
-                                        ),
-                                      )
-                                    ],
-                                  ),
+                                    ),
+                                    SizedBox(width: 50),
+                                    CircleAvatar(
+                                      backgroundColor: Colors.grey[100],
+                                      child: SvgPicture.asset(
+                                        'assets/icons/Heart Icon_2.svg',
+                                      ),
+                                    )
+                                  ],
                                 ),
-                              ],
-                            )
-                          ],
-                        ),
+                              ),
+                            ],
+                          )
+                        ],
                       ),
                     ],
                   ),
