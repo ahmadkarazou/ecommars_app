@@ -1,3 +1,4 @@
+import 'package:ecommars_app/Screens/product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -380,7 +381,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: TextButton(
-                              onPressed: (){},
+                              onPressed: (){Navigator.push(context,MaterialPageRoute(builder: (context) => const ProductScreen()));},
                               child: Container(
                                 decoration: const BoxDecoration(
                                   color: Color.fromRGBO(234, 237, 237, .5),
@@ -458,7 +459,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: TextButton(
-                              onPressed: (){},
+                              onPressed: (){
+
+                              },
                               child: Container(
                                 decoration: const BoxDecoration(
                                   color: Color.fromRGBO(234, 237, 237, .5),

@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 class ButtonApp extends StatelessWidget {
    ButtonApp({
     required this.onPressed,
+     this.ss,
     super.key,
   });
    VoidCallback onPressed;
+   String? ss='Continue';
   
 
   @override
@@ -19,8 +21,8 @@ class ButtonApp extends StatelessWidget {
           fixedSize: MaterialStatePropertyAll(
               Size.fromWidth(double.infinity))),
       
-      child: const Text(
-        'Continue',
+      child:  Text(
+       ss!,
         style: TextStyle(fontSize: 20, color: Colors.white),
       ),
     );
