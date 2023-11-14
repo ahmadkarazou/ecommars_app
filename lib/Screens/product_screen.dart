@@ -20,11 +20,11 @@ class _ProductScreenState extends State<ProductScreen> {
         backgroundColor: Colors.grey.shade100,
         body: Column(
           children: [
-             Row(
+              Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {Navigator.pop(context);},
                   child: CircleAvatar(
                     backgroundColor: Colors.white,
                     child: SvgPicture.asset('assets/icons/Back ICon.svg'),
