@@ -20,7 +20,7 @@ class _ProductScreenState extends State<ProductScreen> {
         backgroundColor: Colors.grey.shade100,
         body: Column(
           children: [
-            Row(
+             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextButton(
