@@ -1,3 +1,6 @@
+import 'package:ecommars_app/Screens/sign_in_screen.dart';
+import 'package:ecommars_app/widget/button_app.dart';
+import 'package:ecommars_app/widget/sup_title_text.dart';
 import 'package:ecommars_app/widget/title_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,13 +18,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return SafeArea(
         child: Scaffold(
       backgroundColor: Colors.grey.shade100,
-      appBar: AppBar(),
+
       body: Container(
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 20),
+            SizedBox(height: 30),
             Stack(
               children: [
                 CircleAvatar(
@@ -44,10 +47,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ],
             ),
+            SizedBox(height: 10),
+            TitleText(
+                title: 'Ahmad karzun', colorText: Colors.black, fontSize: 30),
+            SizedBox(height: 10),
+            SupTitleText(title: 'ahmad@gamil.com'),
             SizedBox(height: 20),
             Container(
               width: double.infinity,
-              decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(30)),
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(30)),
               padding: EdgeInsets.all(20),
               child: Column(
                 children: [
@@ -56,21 +65,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     title: 'Edit Profile',
                     onTap: () {},
                   ),
+                  SizedBox(height: 10),
                   RowContent(
                     icons: 'assets/icons/Heart Icon_2.svg',
                     title: 'My Fevarit',
                     onTap: () {},
                   ),
+                  SizedBox(height: 10),
                   RowContent(
-                    icons: 'assets/icons/User Icon.svg',
-                    title: 'Edit Profile',
+                    icons: 'assets/icons/Star Icon.svg',
+                    title: 'My Rating',
                     onTap: () {},
                   ),
+                  SizedBox(height: 10),
                   RowContent(
-                    icons: 'assets/icons/User Icon.svg',
-                    title: 'Edit Profile',
+                    icons: 'assets/icons/Question mark.svg',
+                    title: 'Help Center',
                     onTap: () {},
-                  )
+                  ),
+                  SizedBox(height: 20),
+                  SizedBox(
+                      height: 60,
+                      width: double.infinity,
+                      child: ButtonApp(
+                        onPressed:() {Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SignInScreen(),
+                            ));},
+                        ss: 'Log uot',
+                      ))
                 ],
               ),
             )
@@ -95,24 +119,24 @@ class RowContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onTap,
-      child: Row(
-        children: [
-          SvgPicture.asset(
-            'assets/icons/User Icon.svg',
-            color: Colors.black,
-          ),
-          SizedBox(width: 20),
-          TitleText(
-              title: 'Edit Profile', colorText: Colors.black, fontSize: 24),
-          SizedBox(width: 120),
-          Icon(
-            Icons.arrow_forward,
-            size: 40,
-            color: Colors.black,
-          )
-        ],
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.grey.shade100,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: TextButton(
+        onPressed: onTap,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            SvgPicture.asset(
+              icons,
+              color: Colors.deepOrange,
+              width: 30,
+            ),
+            TitleText(title: title, colorText: Colors.black, fontSize: 25),
+          ],
+        ),
       ),
     );
   }
