@@ -1,3 +1,4 @@
+import 'package:ecommars_app/Screens/favorite_screen.dart';
 import 'package:ecommars_app/Screens/product_screen.dart';
 import 'package:ecommars_app/Screens/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class HomePageScreen extends StatefulWidget {
 class _HomePageScreenState extends State<HomePageScreen> {
   List<Widget>pages=[
     Home(),
-    Text('Foviret'),
+    FavoriteScreen(),
     Text('Chat'),
     ProfileScreen(),
   ];

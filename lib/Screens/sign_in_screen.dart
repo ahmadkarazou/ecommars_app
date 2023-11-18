@@ -1,6 +1,7 @@
 import 'package:ecommars_app/Screens/forgot_password_Screen.dart';
 import 'package:ecommars_app/Screens/home_page_screen.dart';
 import 'package:ecommars_app/Screens/registerScreen.dart';
+import 'package:ecommars_app/Screens/success_Screen.dart';
 import 'package:ecommars_app/widget/button_app.dart';
 import 'package:ecommars_app/widget/sign_in_sochi_Button.dart';
 import 'package:ecommars_app/widget/sup_title_text.dart';
@@ -79,7 +80,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const HomePageScreen()),
+                                builder: (context) => const SuccessScreen()),
                           );
                         },
                       )),

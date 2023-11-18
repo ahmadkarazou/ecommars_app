@@ -1,3 +1,4 @@
+import 'package:ecommars_app/Screens/edit_profile.dart';
 import 'package:ecommars_app/Screens/sign_in_screen.dart';
 import 'package:ecommars_app/widget/button_app.dart';
 import 'package:ecommars_app/widget/sup_title_text.dart';
@@ -18,34 +19,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return SafeArea(
         child: Scaffold(
       backgroundColor: Colors.grey.shade100,
-
       body: Container(
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: 30),
-            Stack(
-              children: [
-                CircleAvatar(
-                  maxRadius: 80,
-                  child: Image.asset(
-                    'assets/image/Profile Image.png',
-                  ),
-                ),
-                Positioned(
-                  bottom: 1,
-                  right: .5,
-                  child: CircleAvatar(
-                      backgroundColor: Colors.deepOrange,
-                      maxRadius: 25,
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.camera_alt_outlined,
-                          ))),
-                ),
-              ],
+            CircleAvatar(
+              maxRadius: 80,
+              child: Image.asset(
+                'assets/image/Profile Image.png',
+              ),
             ),
             SizedBox(height: 10),
             TitleText(
@@ -63,12 +47,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   RowContent(
                     icons: 'assets/icons/User Icon.svg',
                     title: 'Edit Profile',
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => EditProfile(),
+                          ));
+                    },
                   ),
                   SizedBox(height: 10),
                   RowContent(
                     icons: 'assets/icons/Heart Icon_2.svg',
-                    title: 'My Fevarit',
+                    title: 'My favorite',
                     onTap: () {},
                   ),
                   SizedBox(height: 10),
@@ -88,11 +78,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       height: 60,
                       width: double.infinity,
                       child: ButtonApp(
-                        onPressed:() {Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SignInScreen(),
-                            ));},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SignInScreen(),
+                              ));
+                        },
                         ss: 'Log uot',
                       ))
                 ],
