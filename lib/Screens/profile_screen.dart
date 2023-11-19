@@ -57,8 +57,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   SizedBox(height: 10),
                   RowContent(
-                    icons: 'assets/icons/Heart Icon_2.svg',
-                    title: 'My favorite',
+                    icons: 'assets/icons/icon-order-1.svg',
+                    title: 'My Orders',
                     onTap: () {},
                   ),
                   SizedBox(height: 10),
@@ -85,7 +85,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 builder: (context) => SignInScreen(),
                               ));
                         },
-                        ss: 'Log uot',
+                        textButton: 'Log uot',
                       ))
                 ],
               ),

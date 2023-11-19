@@ -1,6 +1,7 @@
 import 'package:ecommars_app/Screens/favorite_screen.dart';
 import 'package:ecommars_app/Screens/product_screen.dart';
 import 'package:ecommars_app/Screens/profile_screen.dart';
+import 'package:ecommars_app/widget/product_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -12,22 +13,25 @@ class HomePageScreen extends StatefulWidget {
 }
 
 class _HomePageScreenState extends State<HomePageScreen> {
-  List<Widget>pages=[
+  List<Widget> pages = [
     Home(),
     FavoriteScreen(),
     Text('Chat'),
     ProfileScreen(),
   ];
-  int selectedindex =0;
+  int selectedindex = 0;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: selectedindex,
-          onTap: (index){setState(() {
-            selectedindex=index;
-          });},
+          onTap: (index) {
+            setState(() {
+              selectedindex = index;
+            });
+          },
           items: [
             BottomNavigationBarItem(
                 icon: SvgPicture.asset('assets/icons/Shop Icon.svg'),
@@ -39,22 +43,32 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 icon: SvgPicture.asset('assets/icons/Chat bubble Icon.svg'),
                 label: ''),
             BottomNavigationBarItem(
-                icon: SvgPicture.asset('assets/icons/User.svg',color: Colors.grey,), label: ''),
+                icon: SvgPicture.asset(
+                  'assets/icons/User.svg',
+                  color: Colors.grey,
+                ),
+                label: ''),
           ],
         ),
-        body:pages.elementAt(selectedindex),
+        body: pages.elementAt(selectedindex),
       ),
     );
   }
 }
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({
     super.key,
   });
 
   @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
   Widget build(BuildContext context) {
+    bool isFavo = false;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SingleChildScrollView(
@@ -121,8 +135,7 @@ class Home extends StatelessWidget {
                           child: Text(
                             '3',
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.white, fontSize: 12),
+                            style: TextStyle(color: Colors.white, fontSize: 12),
                           ),
                         ))
                   ],
@@ -171,85 +184,27 @@ class Home extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Column(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.orange[100],
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(16),
-                        ),
-                      ),
-                      padding: const EdgeInsets.all(20),
-                      child:
-                          SvgPicture.asset('assets/icons/Flash Icon.svg'),
-                    ),
-                    const Text('Flash\n Deal'),
-                  ],
+                SectionsIcon(
+                  icon: 'assets/icons/Flash Icon.svg',
+                  name: 'Flash\n Deal',
                 ),
-                Column(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.orange[100],
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(16),
-                        ),
-                      ),
-                      padding: const EdgeInsets.all(20),
-                      child: SvgPicture.asset('assets/icons/Bill Icon.svg'),
-                    ),
-                    const Text('Bill'),
-                  ],
+                SectionsIcon(
+                  icon: 'assets/icons/Bill Icon.svg',
+                  name: 'Bill',
                 ),
-                Column(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.orange[100],
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(16),
-                        ),
-                      ),
-                      padding: const EdgeInsets.all(20),
-                      child: SvgPicture.asset('assets/icons/Game Icon.svg'),
-                    ),
-                    const Text('Game'),
-                  ],
+                SectionsIcon(
+                  icon: 'assets/icons/Game Icon.svg',
+                  name: 'Game',
                 ),
-                Column(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.orange[100],
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(16),
-                        ),
-                      ),
-                      padding: const EdgeInsets.all(20),
-                      child: SvgPicture.asset('assets/icons/Gift Icon.svg'),
-                    ),
-                    const Text('Daily\nGift'),
-                  ],
+                SectionsIcon(
+                  icon: 'assets/icons/Gift Icon.svg',
+                  name: 'Daily\nGift',
                 ),
-                Column(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.orange[100],
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(16),
-                        ),
-                      ),
-                      padding: const EdgeInsets.all(20),
-                      child: SvgPicture.asset(
-                        'assets/icons/Discover.svg',
-                        width: 22,
-                      ),
-                    ),
-                    const Text('More'),
-                  ],
-                )
+                SectionsIcon(
+                  icon: 'assets/icons/Discover.svg',
+                  name: 'More',
+                ),
+
               ],
             ),
             const SizedBox(height: 10),
@@ -283,8 +238,8 @@ class Home extends StatelessWidget {
                         decoration: const BoxDecoration(
                           color: Colors.black,
                           image: DecorationImage(
-                              image: AssetImage(
-                                  'assets/image/Image Banner 2.png'),
+                              image:
+                                  AssetImage('assets/image/Image Banner 2.png'),
                               opacity: 50,
                               fit: BoxFit.fill),
                           borderRadius: BorderRadius.all(
@@ -331,8 +286,8 @@ class Home extends StatelessWidget {
                         decoration: const BoxDecoration(
                           color: Colors.black,
                           image: DecorationImage(
-                            image: AssetImage(
-                                'assets/image/Image Banner 3.png'),
+                            image:
+                                AssetImage('assets/image/Image Banner 3.png'),
                             opacity: 50,
                             fit: BoxFit.fill,
                           ),
@@ -402,239 +357,31 @@ class Home extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: TextButton(
-                          onPressed: (){Navigator.push(context,MaterialPageRoute(builder: (context) => const ProductScreen()));},
-                          child: Container(
-                            decoration: const BoxDecoration(
-                              color: Color.fromRGBO(234, 237, 237, .5),
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(24),
-                              ),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(25.0),
-                              child: Image(
-                                image: AssetImage(
-                                  'assets/image/ps4_console_white_1.png',
-                                ),
-                                width: 40,
-                                height: 40,
-                              ),
-                            ),
-                            height: 175,
-                            width: 175,
-                          ),
-                        ),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'wireless Controller',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontFamily: 'Muli',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                            ),
-                          ),
-                          SizedBox(height: 5),
-                          Text(
-                            'for PS4',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontFamily: 'Muli',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14,
-                            ),
-                          ),
-                          SizedBox(height: 5),
-                          SizedBox(
-                            child: Row(
-                              children: [
-                                Text(
-                                  '\$64.99',
-                                  style: TextStyle(
-                                    color: Colors.orange,
-                                    fontFamily: 'Muli',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18,
-                                  ),
-                                ),
-                                SizedBox(width: 50),
-                                CircleAvatar(
-                                  backgroundColor: Colors.red[100],
-                                  child: SvgPicture.asset(
-                                    'assets/icons/Heart Icon_2.svg',
-                                    color: Colors.red,
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
+                  ProductCart(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ProductScreen()));
+                    },
+                    imageUrl: 'assets/image/ps4_console_white_1.png',
+                    isFavo: isFavo,
+                    name: 'wireless Controller\nfor PS4',
+                    prise: '64.99',
                   ),
-                  Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: TextButton(
-                          onPressed: (){
-
-                          },
-                          child: Container(
-                            decoration: const BoxDecoration(
-                              color: Color.fromRGBO(234, 237, 237, .5),
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(24),
-                              ),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(25.0),
-                              child: Image(
-                                image: AssetImage(
-                                  'assets/image/Image Popular Product 2.png',
-                                ),
-                                width: 40,
-                                height: 40,
-                              ),
-                            ),
-                            height: 175,
-                            width: 175,
-                          ),
-                        ),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Nike Sport white',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontFamily: 'Muli',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                            ),
-                          ),
-                          SizedBox(height: 5),
-                          Text(
-                            'Man Pant',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontFamily: 'Muli',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14,
-                            ),
-                          ),
-                          SizedBox(height: 5),
-                          SizedBox(
-                            child: Row(
-                              children: [
-                                Text(
-                                  '\$50.5',
-                                  style: TextStyle(
-                                    color: Colors.orange,
-                                    fontFamily: 'Muli',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18,
-                                  ),
-                                ),
-                                SizedBox(width: 50),
-                                CircleAvatar(
-                                  backgroundColor: Colors.grey[100],
-                                  child: SvgPicture.asset(
-                                    'assets/icons/Heart Icon_2.svg',
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
+                  ProductCart(
+                    onTap: () {},
+                    imageUrl: 'assets/image/Image Popular Product 2.png',
+                    isFavo: isFavo,
+                    name: 'Nike Sport white\nMan Pant',
+                    prise: '50.5',
                   ),
-                  Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: TextButton(
-                          onPressed: (){},
-                          child: Container(
-                            decoration: const BoxDecoration(
-                              color: Color.fromRGBO(234, 237, 237, .5),
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(24),
-                              ),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(25.0),
-                              child: Image(
-                                image: AssetImage(
-                                  'assets/image/Image Popular Product 3.png',
-                                ),
-                                width: 40,
-                                height: 40,
-                              ),
-                            ),
-                            height: 175,
-                            width: 175,
-                          ),
-                        ),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Glove',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontFamily: 'Muli',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                            ),
-                          ),
-                          SizedBox(height: 5),
-                          Text(
-                            'Polyg',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontFamily: 'Muli',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14,
-                            ),
-                          ),
-                          SizedBox(height: 5),
-                          SizedBox(
-                            child: Row(
-                              children: [
-                                Text(
-                                  '\$36.5',
-                                  style: TextStyle(
-                                    color: Colors.orange,
-                                    fontFamily: 'Muli',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18,
-                                  ),
-                                ),
-                                SizedBox(width: 50),
-                                CircleAvatar(
-                                  backgroundColor: Colors.grey[100],
-                                  child: SvgPicture.asset(
-                                    'assets/icons/Heart Icon_2.svg',
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
+                  ProductCart(
+                    onTap: () {},
+                    imageUrl: 'assets/image/Image Popular Product 3.png',
+                    isFavo: isFavo,
+                    name: 'Nike Sport white\nMan Pant',
+                    prise: '50.5',
                   ),
                 ],
               ),
@@ -642,6 +389,37 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class SectionsIcon extends StatelessWidget {
+  SectionsIcon({
+    required this.name,
+    required this.icon,
+    super.key,
+  });
+
+  String icon;
+  String name;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(height: 65,
+          width: 65,
+          decoration: BoxDecoration(
+            color: Colors.orange[100],
+            borderRadius: const BorderRadius.all(
+              Radius.circular(16),
+            ),
+          ),
+          padding: const EdgeInsets.all(20),
+          child: SvgPicture.asset(icon,),
+        ),
+        Text(name),
+      ],
     );
   }
 }

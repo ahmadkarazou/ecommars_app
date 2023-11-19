@@ -264,7 +264,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                   height: 50,
                                   child: ButtonApp(
                                     onPressed: () {},
-                                    ss: 'Add To Cart',
+                                    textButton: 'Add To Cart',
                                   ),
                                 ),
                                 SizedBox(height: 5),

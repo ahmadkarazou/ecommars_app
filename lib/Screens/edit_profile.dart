@@ -74,7 +74,7 @@ appBar: AppBar(backgroundColor: Colors.grey.shade100,),
                                   MaterialPageRoute(
                                     builder: (context) => ProfileScreen(),
                                   ));},
-                              ss: 'Save',
+                              textButton: 'Save',
                             ))
                       ],
                     ),
