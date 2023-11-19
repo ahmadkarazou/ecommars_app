@@ -1,5 +1,6 @@
 import 'package:ecommars_app/widget/button_app.dart';
 import 'package:ecommars_app/widget/container_color.dart';
+import 'package:ecommars_app/widget/product_cart.dart';
 import 'package:ecommars_app/widget/sup_title_text.dart';
 import 'package:ecommars_app/widget/title_text.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,11 @@ class ProductScreen extends StatefulWidget {
 class _ProductScreenState extends State<ProductScreen> {
   @override
   Widget build(BuildContext context) {
+    // List pro[
+    //   Map<Sting,dynamic>(
+    //
+    //   )
+    // ]
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.grey.shade100,

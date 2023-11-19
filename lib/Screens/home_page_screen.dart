@@ -34,18 +34,35 @@ class _HomePageScreenState extends State<HomePageScreen> {
           },
           items: [
             BottomNavigationBarItem(
-                icon: SvgPicture.asset('assets/icons/Shop Icon.svg'),
+                icon: SvgPicture.asset(
+                  'assets/icons/Shop Icon.svg',
+                  color: (selectedindex == 0)
+                      ? Colors.deepOrange
+                      : Colors.grey,
+                ),
                 label: ''),
             BottomNavigationBarItem(
-                icon: SvgPicture.asset('assets/icons/Heart Icon.svg'),
+                icon: SvgPicture.asset(
+                  'assets/icons/Heart Icon.svg',
+                  color: (selectedindex == 1)
+                      ? Colors.deepOrange
+                      : Colors.grey,
+                ),
                 label: ''),
             BottomNavigationBarItem(
-                icon: SvgPicture.asset('assets/icons/Chat bubble Icon.svg'),
+                icon: SvgPicture.asset(
+                  'assets/icons/Chat bubble Icon.svg',
+                  color: (selectedindex == 2)
+                      ? Colors.deepOrange
+                      : Colors.grey,
+                ),
                 label: ''),
             BottomNavigationBarItem(
                 icon: SvgPicture.asset(
                   'assets/icons/User.svg',
-                  color: Colors.grey,
+                  color: (selectedindex == 3)
+                      ? Colors.deepOrange
+                      : Colors.grey,
                 ),
                 label: ''),
           ],
@@ -204,7 +221,6 @@ class _HomeState extends State<Home> {
                   icon: 'assets/icons/Discover.svg',
                   name: 'More',
                 ),
-
               ],
             ),
             const SizedBox(height: 10),
@@ -407,7 +423,8 @@ class SectionsIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(height: 65,
+        Container(
+          height: 65,
           width: 65,
           decoration: BoxDecoration(
             color: Colors.orange[100],
@@ -416,7 +433,9 @@ class SectionsIcon extends StatelessWidget {
             ),
           ),
           padding: const EdgeInsets.all(20),
-          child: SvgPicture.asset(icon,),
+          child: SvgPicture.asset(
+            icon,
+          ),
         ),
         Text(name),
       ],

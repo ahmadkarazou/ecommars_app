@@ -59,6 +59,7 @@ class _ProductCartState extends State<ProductCart> {
             Text(
               widget.name,
               style: TextStyle(
+
                 color: Colors.black,
                 fontFamily: 'Muli',
                 fontWeight: FontWeight.bold,
