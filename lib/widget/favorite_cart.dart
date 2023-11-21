@@ -3,14 +3,18 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class FavoriteCart extends StatefulWidget {
   FavoriteCart({
+    required this.onTap,
+    required this.price,
+    required this.image,
+    required this.name,
 
     super.key,
   });
+VoidCallback onTap;
+  String image;
+  String name;
+   String price;
 
-  // String? imageUrl;
-  // String? namePru;
-  //  String? price;
-  //
 
 
   @override
@@ -30,12 +34,12 @@ class _FavoriteCartState extends State<FavoriteCart> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Image.asset('assets/image/ps4_console_white_1.png', width: 90),
+          Image.asset(widget.image, width: 90),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(
-                'wireless Controller\nfor PS4',
+                widget.name,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.black,
@@ -45,7 +49,7 @@ class _FavoriteCartState extends State<FavoriteCart> {
                 ),
               ),
               Text(
-                '\$64.99',
+                '\$${widget.price}',
                 style: TextStyle(
                   color: Colors.orange,
                   fontFamily: 'Muli',
@@ -62,7 +66,7 @@ class _FavoriteCartState extends State<FavoriteCart> {
               color: Colors.white,
             ),
             child: TextButton(
-              onPressed: () {},
+              onPressed:widget.onTap,
               child: SizedBox(
                 width: 40,
                 child: SvgPicture.asset(

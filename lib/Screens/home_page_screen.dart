@@ -1,6 +1,7 @@
 import 'package:ecommars_app/Screens/favorite_screen.dart';
 import 'package:ecommars_app/Screens/product_screen.dart';
 import 'package:ecommars_app/Screens/profile_screen.dart';
+import 'package:ecommars_app/model/item_prudect.dart';
 import 'package:ecommars_app/widget/product_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -36,33 +37,25 @@ class _HomePageScreenState extends State<HomePageScreen> {
             BottomNavigationBarItem(
                 icon: SvgPicture.asset(
                   'assets/icons/Shop Icon.svg',
-                  color: (selectedindex == 0)
-                      ? Colors.deepOrange
-                      : Colors.grey,
+                  color: (selectedindex == 0) ? Colors.deepOrange : Colors.grey,
                 ),
                 label: ''),
             BottomNavigationBarItem(
                 icon: SvgPicture.asset(
                   'assets/icons/Heart Icon.svg',
-                  color: (selectedindex == 1)
-                      ? Colors.deepOrange
-                      : Colors.grey,
+                  color: (selectedindex == 1) ? Colors.deepOrange : Colors.grey,
                 ),
                 label: ''),
             BottomNavigationBarItem(
                 icon: SvgPicture.asset(
                   'assets/icons/Chat bubble Icon.svg',
-                  color: (selectedindex == 2)
-                      ? Colors.deepOrange
-                      : Colors.grey,
+                  color: (selectedindex == 2) ? Colors.deepOrange : Colors.grey,
                 ),
                 label: ''),
             BottomNavigationBarItem(
                 icon: SvgPicture.asset(
                   'assets/icons/User.svg',
-                  color: (selectedindex == 3)
-                      ? Colors.deepOrange
-                      : Colors.grey,
+                  color: (selectedindex == 3) ? Colors.deepOrange : Colors.grey,
                 ),
                 label: ''),
           ],
@@ -85,7 +78,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    bool isFavo = false;
+
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SingleChildScrollView(
@@ -369,39 +362,59 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  ProductCart(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const ProductScreen()));
-                    },
-                    imageUrl: 'assets/image/ps4_console_white_1.png',
-                    isFavo: isFavo,
-                    name: 'wireless Controller\nfor PS4',
-                    prise: '64.99',
-                  ),
-                  ProductCart(
+            Container(
+              height: 350,
+              child: ListView.builder(
+                itemCount: dataItem.data.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (_, index) {
+                  return ProductCart(
                     onTap: () {},
-                    imageUrl: 'assets/image/Image Popular Product 2.png',
-                    isFavo: isFavo,
-                    name: 'Nike Sport white\nMan Pant',
-                    prise: '50.5',
-                  ),
-                  ProductCart(
-                    onTap: () {},
-                    imageUrl: 'assets/image/Image Popular Product 3.png',
-                    isFavo: isFavo,
-                    name: 'Nike Sport white\nMan Pant',
-                    prise: '50.5',
-                  ),
-                ],
+                    imageUrl: dataItem.data[index]['image'].toString(),
+                    isFavo: dataItem.data[index]['isFavo'],
+                    name: dataItem.data[index]['name'].toString(),
+                    prise: dataItem.data[index]['prise'].toString(),
+                    onFavo:(){ setState(() {
+                      dataItem.favoriteItem(index);
+                      print(dataItem.data[index]['isFavo']);
+                    });},
+                  );
+                },
               ),
             ),
+            // SingleChildScrollView(
+            //   scrollDirection: Axis.horizontal,
+            //   child: Row(
+            //     children: [
+            //       ProductCart(
+            //         onTap: () {
+            //           Navigator.push(
+            //               context,
+            //               MaterialPageRoute(
+            //                   builder: (context) => const ProductScreen()));
+            //         },
+            //         imageUrl: 'assets/image/ps4_console_white_1.png',
+            //         isFavo: isFavo,
+            //         name: 'wireless Controller\nfor PS4',
+            //         prise: '64.99',
+            //       ),
+            //       ProductCart(
+            //         onTap: () {},
+            //         imageUrl: 'assets/image/Image Popular Product 2.png',
+            //         isFavo: isFavo,
+            //         name: 'Nike Sport white\nMan Pant',
+            //         prise: '50.5',
+            //       ),
+            //       ProductCart(
+            //         onTap: () {},
+            //         imageUrl: 'assets/image/Image Popular Product 3.png',
+            //         isFavo: isFavo,
+            //         name: 'Nike Sport white\nMan Pant',
+            //         prise: '50.5',
+            //       ),
+            //     ],
+            //   ),
+            // ),
           ],
         ),
       ),

@@ -8,14 +8,15 @@ class ProductCart extends StatefulWidget {
     required this.isFavo,
     required this.name,
     required this.prise,
+    required this.onFavo,
 
     super.key,
   });
-
+VoidCallback onFavo;
   VoidCallback onTap;
   String name;
   String prise;
-  bool isFavo;
+  bool isFavo ;
   String imageUrl;
 
 
@@ -34,6 +35,7 @@ class _ProductCartState extends State<ProductCart> {
           child: TextButton(
             onPressed: widget.onTap,
             child: Container(
+
               decoration: const BoxDecoration(
                 color: Color.fromRGBO(234, 237, 237, .5),
                 borderRadius: BorderRadius.all(
@@ -79,7 +81,7 @@ class _ProductCartState extends State<ProductCart> {
                       fontSize: 18,
                     ),
                   ),
-                  SizedBox(width: 50),
+                  SizedBox(width: 45),
                   TextButton(
                     child: CircleAvatar(
                       backgroundColor:
@@ -89,9 +91,8 @@ class _ProductCartState extends State<ProductCart> {
                         color: widget.isFavo ? Colors.red : Colors.grey,
                       ),
                     ),
-                    onPressed:(){ setState(() {
-                      widget.isFavo = !widget.isFavo;
-                    });},
+                    onPressed: widget.onFavo,
+
                   )
                 ],
               ),
