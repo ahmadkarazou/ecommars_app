@@ -1,26 +1,30 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class TextFieldApp extends StatelessWidget {
-   TextFieldApp({
+  TextFieldApp({
     this.hintText,
     this.label,
-     this.iconTextField,
+    this.iconTextField,
     super.key,
   });
+
+  TextEditingController controlar = TextEditingController();
   String? hintText;
   String? label;
   Icon? iconTextField;
 
-
   @override
   Widget build(BuildContext context) {
-    return  TextField(
+    return TextFormField(
+      controller: controlar,
+
       decoration: InputDecoration(
+
         counter: const Text(''),
         contentPadding: const EdgeInsets.all(15),
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        hintText:hintText,
+        hintText: hintText,
         suffixIcon: iconTextField,
         label: Text(label!),
         border: const OutlineInputBorder(

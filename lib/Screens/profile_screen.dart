@@ -41,7 +41,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               width: double.infinity,
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(30)),
-              padding: EdgeInsets.all(20),
+              padding: EdgeInsets.all(15),
               child: Column(
                 children: [
                   RowContent(
@@ -55,19 +55,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ));
                     },
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 15),
                   RowContent(
                     icons: 'assets/icons/icon-order-1.svg',
                     title: 'My Orders',
                     onTap: () {},
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 15),
                   RowContent(
                     icons: 'assets/icons/Star Icon.svg',
                     title: 'My Rating',
                     onTap: () {},
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 15),
                   RowContent(
                     icons: 'assets/icons/Question mark.svg',
                     title: 'Help Center',
@@ -126,7 +126,7 @@ class RowContent extends StatelessWidget {
               color: Colors.deepOrange,
               width: 30,
             ),
-            TitleText(title: title, colorText: Colors.black, fontSize: 25),
+            TitleText(title: title, colorText: Colors.black, fontSize: 24),
           ],
         ),
       ),
