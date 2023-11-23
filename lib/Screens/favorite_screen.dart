@@ -1,3 +1,4 @@
+import 'package:ecommars_app/model/API.dart';
 import 'package:ecommars_app/model/item_prudect.dart';
 import 'package:ecommars_app/widget/title_text.dart';
 import 'package:ecommars_app/widget/favorite_cart.dart';
@@ -27,21 +28,21 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                   fontSize: 40,
                 ),
                 SizedBox(
-                  height: 700,
+                  height: 600,
                   child: ListView.builder(
-                    itemCount: dataItem.data.length,
+                    itemCount: item.length,
                     itemBuilder: (_, index) {
-                      if (dataItem.data[index]['isFavo'] == true) {
+                      if (item[index].isFavo) {
                         return FavoriteCart(
                             onTap: () {
                               setState(() {
-                                dataItem.favoriteItem(index);
-                                print(dataItem.data[index]['isFavo']);
+                                item[index].isFavo=false;
+                                print(item[index].isFavo);
                               });
                             },
-                            price: dataItem.data[index]['prise'].toString(),
-                            image: dataItem.data[index]['image'].toString(),
-                            name: dataItem.data[index]['name'].toString());
+                            price: item[index].price,
+                            image: item[index].image,
+                            name: item[index].title);
                       }else{
                         return Container();
                       }

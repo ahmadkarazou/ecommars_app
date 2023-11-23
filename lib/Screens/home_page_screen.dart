@@ -1,11 +1,15 @@
+import 'dart:convert';
+
 import 'package:ecommars_app/Screens/chat_screen.dart';
 import 'package:ecommars_app/Screens/favorite_screen.dart';
 import 'package:ecommars_app/Screens/product_screen.dart';
 import 'package:ecommars_app/Screens/profile_screen.dart';
+import 'package:ecommars_app/model/API.dart';
 import 'package:ecommars_app/model/item_prudect.dart';
 import 'package:ecommars_app/widget/product_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:http/http.dart' as http;
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});
@@ -15,6 +19,14 @@ class HomePageScreen extends StatefulWidget {
 }
 
 class _HomePageScreenState extends State<HomePageScreen> {
+  @override
+
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   List<Widget> pages = [
     Home(),
     FavoriteScreen(),
@@ -79,7 +91,6 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SingleChildScrollView(
@@ -363,22 +374,24 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-            Container(
-              height: 350,
+            SizedBox(
+              height: 320,
+              width: 350,
               child: ListView.builder(
-                itemCount: dataItem.data.length,
+                itemCount:item.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (_, index) {
                   return ProductCart(
                     onTap: () {},
-                    imageUrl: dataItem.data[index]['image'].toString(),
-                    isFavo: dataItem.data[index]['isFavo'],
-                    name: dataItem.data[index]['name'].toString(),
-                    prise: dataItem.data[index]['prise'].toString(),
-                    onFavo:(){ setState(() {
-                      dataItem.favoriteItem(index);
-                      print(dataItem.data[index]['isFavo']);
-                    });},
+                    imageUrl: item[index].image,
+                    isFavo: item[index].isFavo!,
+                    name: item[index].title,
+                    prise: item[index].price,
+                    onFavo: () {
+                      setState(() {
+                        api.favoriteItem(index);
+                      });
+                    },
                   );
                 },
               ),
@@ -456,3 +469,6 @@ class SectionsIcon extends StatelessWidget {
     );
   }
 }
+
+
+

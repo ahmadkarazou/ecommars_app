@@ -34,18 +34,23 @@ class _FavoriteCartState extends State<FavoriteCart> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Image.asset(widget.image, width: 90),
+          Image.network(widget.image, width: 90),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text(
-                widget.name,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontFamily: 'Muli',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
+              Container(
+                width: 120,
+                child: Text(
+                  widget.name,
+                  maxLines: 2,
+                  overflow:TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: 'Muli',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                  ),
                 ),
               ),
               Text(
@@ -59,20 +64,17 @@ class _FavoriteCartState extends State<FavoriteCart> {
               ),
             ],
           ),
-          Container(
-          
-            height: 70,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
-              color: Colors.white,
-            ),
+          CircleAvatar(
+            backgroundColor:Colors.deepOrange ,
+            radius: 25,
+
             child: TextButton(
               onPressed:widget.onTap,
-              child: SizedBox(
-                width: 40,
-                child: SvgPicture.asset(
-                  'assets/icons/data-exploration-data-development-workflow.svg',
-                  color: Colors.black,
-                ),
+              child: SvgPicture.asset(
+                'assets/icons/data-exploration-data-development-workflow.svg',
+                color: Colors.white,
+                width: 30,
+                height: 30,
               ),
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:ecommars_app/Screens/home_page_screen.dart';
+import 'package:ecommars_app/model/API.dart';
 import 'package:ecommars_app/widget/button_app.dart';
 import 'package:flutter/material.dart';
 
@@ -23,12 +24,15 @@ class _SuccessScreenState extends State<SuccessScreen> {
             margin: EdgeInsets.all(18),
             width: double.infinity,
             height: 50,
-            child: ButtonApp(onPressed: () {
-              Navigator.pushReplacement(
+            child: ButtonApp(onPressed: ()async {
+              await  Api(). futchProducts();
+              if(mounted) {
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => HomePageScreen(),
                   ));
+              }
             }),
           ),
         ],
