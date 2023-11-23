@@ -1,3 +1,4 @@
+import 'package:ecommars_app/Screens/chat_screen.dart';
 import 'package:ecommars_app/Screens/favorite_screen.dart';
 import 'package:ecommars_app/Screens/product_screen.dart';
 import 'package:ecommars_app/Screens/profile_screen.dart';
@@ -17,7 +18,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
   List<Widget> pages = [
     Home(),
     FavoriteScreen(),
-    Text('Chat'),
+    ChatScreen(),
     ProfileScreen(),
   ];
   int selectedindex = 0;

@@ -9,16 +9,16 @@ class ProductCart extends StatefulWidget {
     required this.name,
     required this.prise,
     required this.onFavo,
-
     super.key,
   });
-VoidCallback onFavo;
+
+  VoidCallback onFavo;
   VoidCallback onTap;
   String name;
   String prise;
-  bool isFavo ;
-  String imageUrl;
+  bool isFavo;
 
+  String imageUrl;
 
   @override
   State<ProductCart> createState() => _ProductCartState();
@@ -27,7 +27,6 @@ VoidCallback onFavo;
 class _ProductCartState extends State<ProductCart> {
   @override
   Widget build(BuildContext context) {
-
     return Column(
       children: [
         Padding(
@@ -35,7 +34,6 @@ class _ProductCartState extends State<ProductCart> {
           child: TextButton(
             onPressed: widget.onTap,
             child: Container(
-
               decoration: const BoxDecoration(
                 color: Color.fromRGBO(234, 237, 237, .5),
                 borderRadius: BorderRadius.all(
@@ -61,7 +59,6 @@ class _ProductCartState extends State<ProductCart> {
             Text(
               widget.name,
               style: TextStyle(
-
                 color: Colors.black,
                 fontFamily: 'Muli',
                 fontWeight: FontWeight.bold,
@@ -84,15 +81,15 @@ class _ProductCartState extends State<ProductCart> {
                   SizedBox(width: 45),
                   TextButton(
                     child: CircleAvatar(
-                      backgroundColor:
-                          widget.isFavo ? Colors.red[100] : Colors.grey.shade100,
+                      backgroundColor: widget.isFavo
+                          ? Colors.red[100]
+                          : Colors.grey.shade100,
                       child: SvgPicture.asset(
                         'assets/icons/Heart Icon_2.svg',
                         color: widget.isFavo ? Colors.red : Colors.grey,
                       ),
                     ),
                     onPressed: widget.onFavo,
-
                   )
                 ],
               ),
